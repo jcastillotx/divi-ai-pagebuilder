@@ -17,18 +17,321 @@ The wizard is accessed via a prominent "AI Create" button in the Divi Builder in
 │                                                                          │
 │                    🤖 What would you like to create?                     │
 │                                                                          │
-│         ┌─────────────────┐         ┌─────────────────┐                 │
-│         │                 │         │                 │                 │
-│         │   📄 FULL PAGE  │         │   📦 SECTION    │                 │
-│         │                 │         │                 │                 │
-│         │  Complete page  │         │  Single section │                 │
-│         │  with multiple  │         │  to add to an   │                 │
-│         │  sections       │         │  existing page  │                 │
-│         │                 │         │                 │                 │
-│         └─────────────────┘         └─────────────────┘                 │
+│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐          │
+│  │                 │  │                 │  │                 │          │
+│  │   📄 FULL PAGE  │  │   📦 SECTION    │  │   🏗️ SITE SETUP │          │
+│  │                 │  │                 │  │                 │          │
+│  │  Complete page  │  │  Single section │  │  Header, Footer │          │
+│  │  with multiple  │  │  to add to an   │  │  404 page &     │          │
+│  │  sections       │  │  existing page  │  │  Navigation     │          │
+│  │                 │  │                 │  │                 │          │
+│  └─────────────────┘  └─────────────────┘  └─────────────────┘          │
 │                                                                          │
 └─────────────────────────────────────────────────────────────────────────┘
 ```
+
+---
+
+## Site Setup Flow
+
+When user selects **SITE SETUP**, they configure site-wide elements that appear on every page.
+
+### Step 1: Header Selection
+
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                                                                          │
+│              Choose a header style for your website:                     │
+│                                                                          │
+│  Source: https://divi.express/divi-headers/                             │
+│                                                                          │
+│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐          │
+│  │ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓ │  │ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓ │  │ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓ │          │
+│  │ LOGO    ≡ NAV  │  │ LOGO  NAV  BTN │  │    CENTERED     │          │
+│  │                 │  │                 │  │   LOGO + NAV    │          │
+│  │   Standard      │  │   With CTA      │  │                 │          │
+│  └─────────────────┘  └─────────────────┘  └─────────────────┘          │
+│                                                                          │
+│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐          │
+│  │ ████████████████│  │ TOP BAR         │  │ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓ │          │
+│  │ LOGO            │  │ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓ │  │ MEGA MENU       │          │
+│  │ NAV  NAV  NAV   │  │ LOGO    ≡ NAV  │  │ ████████████████│          │
+│  │   Transparent   │  │   With Top Bar  │  │   Mega Menu     │          │
+│  └─────────────────┘  └─────────────────┘  └─────────────────┘          │
+│                                                                          │
+│  [Browse All Headers...]                    [Skip - I'll add later]     │
+│                                                                          │
+└─────────────────────────────────────────────────────────────────────────┘
+```
+
+**Header Categories:**
+| Category | Description | Best For |
+|----------|-------------|----------|
+| Standard | Logo left, navigation right | Most websites |
+| With CTA | Includes prominent call-to-action button | Lead generation |
+| Centered | Logo and nav centered | Brand-focused |
+| Transparent | Overlays hero section | Visual impact |
+| With Top Bar | Info bar above main header | Contact info, promos |
+| Mega Menu | Expandable dropdown menus | Large sites, e-commerce |
+| Sticky | Fixed on scroll | Easy navigation |
+| Mobile-First | Hamburger menu default | Mobile-heavy traffic |
+
+### Step 2: Footer Selection
+
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                                                                          │
+│              Choose a footer style for your website:                     │
+│                                                                          │
+│  Source: https://divi.express/divi-footers/                             │
+│                                                                          │
+│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐          │
+│  │ ░░░░░░░░░░░░░░ │  │ ABOUT  LINKS    │  │ ████████████████│          │
+│  │ © 2024 Company │  │ CONTACT SOCIAL  │  │ NEWSLETTER FORM │          │
+│  │                 │  │ ░░░░░░░░░░░░░░ │  │ ░░░░░░░░░░░░░░ │          │
+│  │   Minimal       │  │   4-Column      │  │   With CTA      │          │
+│  └─────────────────┘  └─────────────────┘  └─────────────────┘          │
+│                                                                          │
+│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐          │
+│  │ LOGO            │  │ MAP             │  │ █ SOCIAL ██████ │          │
+│  │ NAV  NAV  NAV   │  │ CONTACT  HOURS │  │ LINKS    LINKS  │          │
+│  │ ░░░ SOCIAL ░░░ │  │ ░░░░░░░░░░░░░░ │  │ ░░░░░░░░░░░░░░ │          │
+│  │   Centered      │  │   With Map      │  │   Social Focus  │          │
+│  └─────────────────┘  └─────────────────┘  └─────────────────┘          │
+│                                                                          │
+│  [Browse All Footers...]                    [Skip - I'll add later]     │
+│                                                                          │
+└─────────────────────────────────────────────────────────────────────────┘
+```
+
+**Footer Categories:**
+| Category | Description | Best For |
+|----------|-------------|----------|
+| Minimal | Simple copyright and basic links | Clean designs |
+| 4-Column | Organized link sections | Information-rich sites |
+| With CTA | Newsletter signup or contact form | Lead capture |
+| Centered | Logo-focused, centered layout | Brand consistency |
+| With Map | Embedded Google Map | Local businesses |
+| Social Focus | Prominent social media links | Social-driven brands |
+| Mega Footer | Extensive links and content | Large websites |
+
+### Step 3: 404 Page Selection
+
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                                                                          │
+│              Choose a 404 error page design:                             │
+│                                                                          │
+│  Source: https://divi.express/divi-404-pages/                           │
+│                                                                          │
+│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐          │
+│  │                 │  │                 │  │                 │          │
+│  │      404        │  │   🔍            │  │    ¯\_(ツ)_/¯   │          │
+│  │  Page Not Found │  │  404 + SEARCH   │  │                 │          │
+│  │   [Go Home]     │  │  Let me help... │  │   Oops! 404     │          │
+│  │                 │  │                 │  │                 │          │
+│  │   Simple        │  │   With Search   │  │   Playful       │          │
+│  └─────────────────┘  └─────────────────┘  └─────────────────┘          │
+│                                                                          │
+│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐          │
+│  │   POPULAR:      │  │   ████████████  │  │   CONTACT US    │          │
+│  │   • Home        │  │   Animated 404  │  │   if you need   │          │
+│  │   • Services    │  │   ████████████  │  │   help finding  │          │
+│  │   • Contact     │  │                 │  │   something     │          │
+│  │   With Links    │  │   Animated      │  │   Helpful       │          │
+│  └─────────────────┘  └─────────────────┘  └─────────────────┘          │
+│                                                                          │
+│  [Browse All 404 Pages...]                  [Skip - Use Default]        │
+│                                                                          │
+└─────────────────────────────────────────────────────────────────────────┘
+```
+
+**404 Page Categories:**
+| Category | Description | Best For |
+|----------|-------------|----------|
+| Simple | Clean message with home button | Minimalist sites |
+| With Search | Search box to help users find content | Content-heavy sites |
+| Playful | Fun, branded error message | Creative brands |
+| With Links | Popular page suggestions | User retention |
+| Animated | Motion graphics or animation | Modern, tech brands |
+| Helpful | Contact option, assistance offer | Service businesses |
+
+### Step 4: Logo & Menu Integration
+
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                                                                          │
+│              Let's set up your logo and navigation:                      │
+│                                                                          │
+│  ┌─────────────────────────────────────────────────────────────────┐    │
+│  │  COMPANY LOGO                                                   │    │
+│  │                                                                 │    │
+│  │  ┌─────────────────────────────┐                               │    │
+│  │  │                             │                               │    │
+│  │  │    [Drag logo here or       │    Current: No logo set      │    │
+│  │  │     click to upload]        │                               │    │
+│  │  │                             │    Recommended: SVG or PNG    │    │
+│  │  │    📁                       │    Min width: 200px           │    │
+│  │  │                             │                               │    │
+│  │  └─────────────────────────────┘                               │    │
+│  │                                                                 │    │
+│  │  Or select from Media Library: [Browse...]                     │    │
+│  │                                                                 │    │
+│  └─────────────────────────────────────────────────────────────────┘    │
+│                                                                          │
+│  ┌─────────────────────────────────────────────────────────────────┐    │
+│  │  PRIMARY NAVIGATION MENU                                        │    │
+│  │                                                                 │    │
+│  │  ○ Use existing menu: [Primary Menu ▼]                         │    │
+│  │                                                                 │    │
+│  │  ● Create new menu from current pages:                         │    │
+│  │    ┌───────────────────────────────────────────────────────┐   │    │
+│  │    │ ☑ Home                                                │   │    │
+│  │    │ ☑ About Us                                            │   │    │
+│  │    │ ☑ Services                                            │   │    │
+│  │    │ ☑ Contact                                             │   │    │
+│  │    │ ☐ Blog (exclude)                                      │   │    │
+│  │    │ ☐ Privacy Policy (exclude)                            │   │    │
+│  │    └───────────────────────────────────────────────────────┘   │    │
+│  │                                                                 │    │
+│  │  Menu name: [Primary Menu_____]                                │    │
+│  │                                                                 │    │
+│  └─────────────────────────────────────────────────────────────────┘    │
+│                                                                          │
+│                                              [Complete Setup →]          │
+│                                                                          │
+└─────────────────────────────────────────────────────────────────────────┘
+```
+
+### Site Setup Generation Process
+
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                      SITE SETUP PIPELINE                                 │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                          │
+│  1. TEMPLATE RETRIEVAL                                                  │
+│     ├── Fetch selected header template from library                     │
+│     ├── Fetch selected footer template from library                     │
+│     └── Fetch selected 404 template from library                        │
+│                                                                          │
+│  2. LOGO INTEGRATION                                                    │
+│     ├── Upload/select logo file                                         │
+│     ├── Store in Media Library                                          │
+│     ├── Update Site Identity settings                                   │
+│     └── Insert logo URL into header template                            │
+│                                                                          │
+│  3. MENU CREATION/ASSIGNMENT                                            │
+│     ├── Check for existing Primary Menu                                 │
+│     │   └── If none: Create new menu from published pages               │
+│     ├── Assign menu to Primary location                                 │
+│     └── Insert menu into header template                                │
+│                                                                          │
+│  4. BRAND TRANSFORMATION                                                │
+│     ├── Apply user's color tokens to header                             │
+│     ├── Apply user's color tokens to footer                             │
+│     ├── Apply user's color tokens to 404 page                           │
+│     └── Apply user's fonts                                              │
+│                                                                          │
+│  5. DIVI THEME BUILDER ASSIGNMENT                                       │
+│     ├── Create Global Header template                                   │
+│     ├── Create Global Footer template                                   │
+│     ├── Create 404 Page template                                        │
+│     └── Assign to all pages (or specific conditions)                    │
+│                                                                          │
+│  6. VERIFICATION                                                        │
+│     ├── Preview header on sample page                                   │
+│     ├── Preview footer on sample page                                   │
+│     ├── Test 404 page                                                   │
+│     └── Confirm navigation works                                        │
+│                                                                          │
+└─────────────────────────────────────────────────────────────────────────┘
+```
+
+### Auto-Menu Creation Logic
+
+When no Primary Menu exists, the system automatically creates one:
+
+```php
+<?php
+class MenuGenerator {
+
+    /**
+     * Create primary menu from existing pages
+     */
+    public function create_menu_from_pages(): int {
+        // Get all published pages
+        $pages = get_pages([
+            'post_status' => 'publish',
+            'sort_column' => 'menu_order,post_title',
+        ]);
+
+        // Filter out utility pages
+        $excluded_slugs = [
+            'privacy-policy',
+            'terms-of-service',
+            'terms-and-conditions',
+            'cookie-policy',
+            'thank-you',
+            'confirmation',
+            '404',
+        ];
+
+        $menu_pages = array_filter($pages, function($page) use ($excluded_slugs) {
+            return !in_array($page->post_name, $excluded_slugs);
+        });
+
+        // Create the menu
+        $menu_name = 'Primary Menu';
+        $menu_id = wp_create_nav_menu($menu_name);
+
+        if (is_wp_error($menu_id)) {
+            return 0;
+        }
+
+        // Add pages to menu
+        $menu_order = 0;
+        foreach ($menu_pages as $page) {
+            wp_update_nav_menu_item($menu_id, 0, [
+                'menu-item-title'     => $page->post_title,
+                'menu-item-object-id' => $page->ID,
+                'menu-item-object'    => 'page',
+                'menu-item-type'      => 'post_type',
+                'menu-item-status'    => 'publish',
+                'menu-item-position'  => $menu_order++,
+            ]);
+        }
+
+        // Assign to Primary location
+        $locations = get_theme_mod('nav_menu_locations', []);
+        $locations['primary-menu'] = $menu_id;
+        set_theme_mod('nav_menu_locations', $locations);
+
+        return $menu_id;
+    }
+
+    /**
+     * Get or create primary menu
+     */
+    public function get_or_create_primary_menu(): int {
+        $locations = get_nav_menu_locations();
+
+        if (isset($locations['primary-menu']) && $locations['primary-menu'] > 0) {
+            return $locations['primary-menu'];
+        }
+
+        return $this->create_menu_from_pages();
+    }
+}
+```
+
+### Template Sources
+
+| Element | Source URL | Template Count |
+|---------|------------|----------------|
+| Headers | https://divi.express/divi-headers/ | 50+ |
+| Footers | https://divi.express/divi-footers/ | 50+ |
+| 404 Pages | https://divi.express/divi-404-pages/ | 20+ |
 
 ---
 
@@ -805,6 +1108,594 @@ $wizard_settings = [
     // Caching
     'media_cache_duration' => 7 * DAY_IN_SECONDS,
 ];
+```
+
+---
+
+## Technical Architecture: JavaScript & AJAX
+
+> **IMPORTANT:** The wizard runs entirely in **wp-admin** using JavaScript and AJAX for maximum responsiveness and user experience.
+
+### Architecture Overview
+
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                    WP-ADMIN WIZARD ARCHITECTURE                          │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                          │
+│  FRONTEND (JavaScript/React)              BACKEND (PHP/WordPress)       │
+│  ─────────────────────────────            ───────────────────────       │
+│                                                                          │
+│  ┌─────────────────────────┐              ┌─────────────────────┐       │
+│  │   Wizard UI Component   │    AJAX      │   REST API          │       │
+│  │   (React SPA in Admin)  │◄────────────►│   Controllers       │       │
+│  │                         │   /wp-json/  │                     │       │
+│  │   • State Management    │              │   • Validation      │       │
+│  │   • Step Navigation     │              │   • AI Service      │       │
+│  │   • Live Preview        │              │   • Template Engine │       │
+│  │   • Media Browser       │              │   • Media Handler   │       │
+│  └─────────────────────────┘              └─────────────────────┘       │
+│            │                                        │                    │
+│            │                                        │                    │
+│            ▼                                        ▼                    │
+│  ┌─────────────────────────┐              ┌─────────────────────┐       │
+│  │   WordPress Admin Page  │              │   Database          │       │
+│  │   (Container)           │              │   • Sessions        │       │
+│  │                         │              │   • Templates       │       │
+│  │   wp-admin/admin.php    │              │   • Media Cache     │       │
+│  │   ?page=divi-ai-wizard  │              │   • User Profiles   │       │
+│  └─────────────────────────┘              └─────────────────────┘       │
+│                                                                          │
+└─────────────────────────────────────────────────────────────────────────┘
+```
+
+### JavaScript Application Structure
+
+```
+src/
+├── admin/
+│   ├── wizard/
+│   │   ├── App.jsx                 # Main wizard application
+│   │   ├── WizardContext.jsx       # Global state management
+│   │   ├── steps/
+│   │   │   ├── EntryStep.jsx       # Page/Section/Site Setup selection
+│   │   │   ├── SiteSetup/
+│   │   │   │   ├── HeaderSelect.jsx
+│   │   │   │   ├── FooterSelect.jsx
+│   │   │   │   ├── Page404Select.jsx
+│   │   │   │   └── LogoMenuSetup.jsx
+│   │   │   ├── PageCreation/
+│   │   │   │   ├── PageTypeSelect.jsx
+│   │   │   │   ├── LayoutPreference.jsx
+│   │   │   │   ├── ContentOverview.jsx
+│   │   │   │   └── MediaRequirements.jsx
+│   │   │   ├── SectionCreation/
+│   │   │   │   ├── SectionTypeSelect.jsx
+│   │   │   │   ├── BackgroundOptions.jsx
+│   │   │   │   └── ContentDescription.jsx
+│   │   │   └── Preview/
+│   │   │       ├── PreviewPane.jsx
+│   │   │       └── InsertConfirm.jsx
+│   │   ├── components/
+│   │   │   ├── TemplateGrid.jsx    # Template browser grid
+│   │   │   ├── TemplateCard.jsx    # Individual template card
+│   │   │   ├── MediaBrowser.jsx    # Unsplash/Envato/DALL-E browser
+│   │   │   ├── ColorPalette.jsx    # Brand colors display
+│   │   │   ├── ProgressBar.jsx     # Generation progress
+│   │   │   └── LivePreview.jsx     # Real-time preview iframe
+│   │   ├── hooks/
+│   │   │   ├── useWizardState.js   # Wizard state hook
+│   │   │   ├── useTemplates.js     # Template fetching hook
+│   │   │   ├── useMediaSearch.js   # Media search hook
+│   │   │   └── useGeneration.js    # AI generation hook
+│   │   └── services/
+│   │       ├── api.js              # AJAX/REST API client
+│   │       ├── templateService.js  # Template operations
+│   │       └── mediaService.js     # Media operations
+│   └── index.js                    # Admin entry point
+```
+
+### AJAX Endpoints (wp_ajax_*)
+
+```php
+<?php
+/**
+ * Register AJAX handlers for wizard
+ */
+class WizardAjaxHandler {
+
+    public function __construct() {
+        // Wizard session management
+        add_action('wp_ajax_divi_ai_wizard_start', [$this, 'start_wizard']);
+        add_action('wp_ajax_divi_ai_wizard_step', [$this, 'save_step']);
+        add_action('wp_ajax_divi_ai_wizard_generate', [$this, 'generate_content']);
+
+        // Template operations
+        add_action('wp_ajax_divi_ai_get_templates', [$this, 'get_templates']);
+        add_action('wp_ajax_divi_ai_preview_template', [$this, 'preview_template']);
+
+        // Media operations
+        add_action('wp_ajax_divi_ai_search_media', [$this, 'search_media']);
+        add_action('wp_ajax_divi_ai_generate_image', [$this, 'generate_ai_image']);
+        add_action('wp_ajax_divi_ai_upload_media', [$this, 'handle_media_upload']);
+
+        // Site setup operations
+        add_action('wp_ajax_divi_ai_create_menu', [$this, 'create_menu']);
+        add_action('wp_ajax_divi_ai_set_logo', [$this, 'set_site_logo']);
+        add_action('wp_ajax_divi_ai_apply_theme_builder', [$this, 'apply_theme_builder']);
+
+        // Insert operations
+        add_action('wp_ajax_divi_ai_insert_to_divi', [$this, 'insert_to_divi']);
+    }
+
+    /**
+     * Start new wizard session
+     */
+    public function start_wizard(): void {
+        check_ajax_referer('divi_ai_wizard', 'nonce');
+
+        $type = sanitize_text_field($_POST['type'] ?? 'page');
+
+        $session_id = wp_generate_uuid4();
+        $session_data = [
+            'type' => $type,
+            'step' => 1,
+            'data' => [],
+            'started_at' => current_time('mysql'),
+        ];
+
+        set_transient("divi_ai_wizard_{$session_id}", $session_data, HOUR_IN_SECONDS);
+
+        wp_send_json_success([
+            'session_id' => $session_id,
+            'type' => $type,
+            'next_step' => $this->get_first_step($type),
+        ]);
+    }
+
+    /**
+     * Save wizard step data
+     */
+    public function save_step(): void {
+        check_ajax_referer('divi_ai_wizard', 'nonce');
+
+        $session_id = sanitize_text_field($_POST['session_id']);
+        $step_data = json_decode(stripslashes($_POST['step_data']), true);
+
+        $session = get_transient("divi_ai_wizard_{$session_id}");
+
+        if (!$session) {
+            wp_send_json_error(['message' => 'Session expired']);
+            return;
+        }
+
+        $session['data'] = array_merge($session['data'], $step_data);
+        $session['step']++;
+
+        set_transient("divi_ai_wizard_{$session_id}", $session, HOUR_IN_SECONDS);
+
+        wp_send_json_success([
+            'next_step' => $this->get_next_step($session),
+            'session' => $session,
+        ]);
+    }
+
+    /**
+     * Get templates with filtering
+     */
+    public function get_templates(): void {
+        check_ajax_referer('divi_ai_wizard', 'nonce');
+
+        $category = sanitize_text_field($_POST['category'] ?? '');
+        $search = sanitize_text_field($_POST['search'] ?? '');
+        $page = absint($_POST['page'] ?? 1);
+
+        global $wpdb;
+        $table = $wpdb->prefix . 'divi_ai_template_library';
+
+        $where = ['1=1'];
+        $params = [];
+
+        if ($category) {
+            $where[] = 'category = %s';
+            $params[] = $category;
+        }
+
+        if ($search) {
+            $where[] = '(name LIKE %s OR tags LIKE %s)';
+            $params[] = '%' . $wpdb->esc_like($search) . '%';
+            $params[] = '%' . $wpdb->esc_like($search) . '%';
+        }
+
+        $per_page = 12;
+        $offset = ($page - 1) * $per_page;
+
+        $sql = $wpdb->prepare(
+            "SELECT * FROM {$table} WHERE " . implode(' AND ', $where) .
+            " ORDER BY popularity_score DESC LIMIT %d OFFSET %d",
+            array_merge($params, [$per_page, $offset])
+        );
+
+        $templates = $wpdb->get_results($sql);
+
+        wp_send_json_success([
+            'templates' => $templates,
+            'page' => $page,
+            'has_more' => count($templates) === $per_page,
+        ]);
+    }
+
+    /**
+     * Search media from various sources
+     */
+    public function search_media(): void {
+        check_ajax_referer('divi_ai_wizard', 'nonce');
+
+        $source = sanitize_text_field($_POST['source']);
+        $query = sanitize_text_field($_POST['query']);
+
+        $results = [];
+
+        switch ($source) {
+            case 'unsplash':
+                $results = $this->search_unsplash($query);
+                break;
+            case 'envato':
+                $results = $this->search_envato($query);
+                break;
+            case 'media_library':
+                $results = $this->search_media_library($query);
+                break;
+        }
+
+        wp_send_json_success(['results' => $results]);
+    }
+
+    /**
+     * Generate AI image with DALL-E
+     */
+    public function generate_ai_image(): void {
+        check_ajax_referer('divi_ai_wizard', 'nonce');
+
+        $prompt = sanitize_textarea_field($_POST['prompt']);
+        $style = sanitize_text_field($_POST['style'] ?? 'natural');
+
+        // Call DALL-E service
+        $dalle = new DallEService();
+        $result = $dalle->generate($prompt, ['style' => $style]);
+
+        // Download and store in Media Library
+        $attachment_id = $this->sideload_image($result['url'], $prompt);
+
+        wp_send_json_success([
+            'attachment_id' => $attachment_id,
+            'url' => wp_get_attachment_url($attachment_id),
+        ]);
+    }
+
+    /**
+     * Apply header/footer to Theme Builder
+     */
+    public function apply_theme_builder(): void {
+        check_ajax_referer('divi_ai_wizard', 'nonce');
+
+        $header_json = stripslashes($_POST['header_json'] ?? '');
+        $footer_json = stripslashes($_POST['footer_json'] ?? '');
+        $page_404_json = stripslashes($_POST['page_404_json'] ?? '');
+
+        // Create Theme Builder templates
+        if ($header_json) {
+            $this->create_theme_builder_template('header', $header_json);
+        }
+
+        if ($footer_json) {
+            $this->create_theme_builder_template('footer', $footer_json);
+        }
+
+        if ($page_404_json) {
+            $this->create_theme_builder_template('404', $page_404_json);
+        }
+
+        wp_send_json_success(['message' => 'Theme Builder updated']);
+    }
+}
+```
+
+### JavaScript API Client
+
+```javascript
+// src/admin/wizard/services/api.js
+
+const API_BASE = '/wp-admin/admin-ajax.php';
+
+class WizardAPI {
+    constructor() {
+        this.nonce = window.diviAiWizard?.nonce || '';
+    }
+
+    async request(action, data = {}) {
+        const formData = new FormData();
+        formData.append('action', action);
+        formData.append('nonce', this.nonce);
+
+        Object.entries(data).forEach(([key, value]) => {
+            if (typeof value === 'object') {
+                formData.append(key, JSON.stringify(value));
+            } else {
+                formData.append(key, value);
+            }
+        });
+
+        const response = await fetch(API_BASE, {
+            method: 'POST',
+            credentials: 'same-origin',
+            body: formData,
+        });
+
+        const result = await response.json();
+
+        if (!result.success) {
+            throw new Error(result.data?.message || 'Request failed');
+        }
+
+        return result.data;
+    }
+
+    // Wizard operations
+    startWizard(type) {
+        return this.request('divi_ai_wizard_start', { type });
+    }
+
+    saveStep(sessionId, stepData) {
+        return this.request('divi_ai_wizard_step', {
+            session_id: sessionId,
+            step_data: stepData,
+        });
+    }
+
+    generate(sessionId) {
+        return this.request('divi_ai_wizard_generate', {
+            session_id: sessionId,
+        });
+    }
+
+    // Template operations
+    getTemplates(options = {}) {
+        return this.request('divi_ai_get_templates', options);
+    }
+
+    previewTemplate(templateId, tokens) {
+        return this.request('divi_ai_preview_template', {
+            template_id: templateId,
+            tokens,
+        });
+    }
+
+    // Media operations
+    searchMedia(source, query) {
+        return this.request('divi_ai_search_media', { source, query });
+    }
+
+    generateImage(prompt, style) {
+        return this.request('divi_ai_generate_image', { prompt, style });
+    }
+
+    // Site setup operations
+    createMenu(pages) {
+        return this.request('divi_ai_create_menu', { pages });
+    }
+
+    setLogo(attachmentId) {
+        return this.request('divi_ai_set_logo', { attachment_id: attachmentId });
+    }
+
+    applyThemeBuilder(headerJson, footerJson, page404Json) {
+        return this.request('divi_ai_apply_theme_builder', {
+            header_json: headerJson,
+            footer_json: footerJson,
+            page_404_json: page404Json,
+        });
+    }
+
+    // Insert to Divi
+    insertToDivi(sessionId, targetPage) {
+        return this.request('divi_ai_insert_to_divi', {
+            session_id: sessionId,
+            target_page: targetPage,
+        });
+    }
+}
+
+export default new WizardAPI();
+```
+
+### React Wizard Component Example
+
+```jsx
+// src/admin/wizard/App.jsx
+
+import React, { useState, useEffect } from 'react';
+import { WizardProvider, useWizard } from './WizardContext';
+import EntryStep from './steps/EntryStep';
+import SiteSetupFlow from './steps/SiteSetup';
+import PageCreationFlow from './steps/PageCreation';
+import SectionCreationFlow from './steps/SectionCreation';
+import PreviewStep from './steps/Preview';
+import api from './services/api';
+
+const WizardApp = () => {
+    const { state, dispatch } = useWizard();
+    const { currentStep, wizardType, sessionId } = state;
+
+    useEffect(() => {
+        // Initialize wizard session
+        if (!sessionId && wizardType) {
+            api.startWizard(wizardType).then(data => {
+                dispatch({ type: 'SET_SESSION', payload: data.session_id });
+            });
+        }
+    }, [wizardType, sessionId]);
+
+    const renderStep = () => {
+        if (!wizardType) {
+            return <EntryStep onSelect={type => dispatch({ type: 'SET_TYPE', payload: type })} />;
+        }
+
+        switch (wizardType) {
+            case 'site-setup':
+                return <SiteSetupFlow />;
+            case 'page':
+                return <PageCreationFlow />;
+            case 'section':
+                return <SectionCreationFlow />;
+            default:
+                return <EntryStep />;
+        }
+    };
+
+    return (
+        <div className="divi-ai-wizard">
+            <div className="wizard-header">
+                <h1>Divi AI Page Builder</h1>
+                <ProgressIndicator currentStep={currentStep} wizardType={wizardType} />
+            </div>
+
+            <div className="wizard-content">
+                {renderStep()}
+            </div>
+
+            <div className="wizard-footer">
+                <NavigationButtons />
+            </div>
+        </div>
+    );
+};
+
+// Entry point
+const WizardRoot = () => (
+    <WizardProvider>
+        <WizardApp />
+    </WizardProvider>
+);
+
+export default WizardRoot;
+```
+
+### Admin Page Registration
+
+```php
+<?php
+/**
+ * Register wizard admin page
+ */
+class WizardAdminPage {
+
+    public function __construct() {
+        add_action('admin_menu', [$this, 'register_menu']);
+        add_action('admin_enqueue_scripts', [$this, 'enqueue_scripts']);
+    }
+
+    public function register_menu(): void {
+        add_menu_page(
+            'Divi AI Wizard',
+            'Divi AI',
+            'edit_pages',
+            'divi-ai-wizard',
+            [$this, 'render_page'],
+            'dashicons-art',
+            30
+        );
+    }
+
+    public function render_page(): void {
+        echo '<div id="divi-ai-wizard-root"></div>';
+    }
+
+    public function enqueue_scripts(string $hook): void {
+        if ($hook !== 'toplevel_page_divi-ai-wizard') {
+            return;
+        }
+
+        wp_enqueue_script(
+            'divi-ai-wizard',
+            DIVI_AI_PLUGIN_URL . 'dist/admin/wizard.js',
+            ['wp-element', 'wp-components', 'wp-api-fetch'],
+            DIVI_AI_VERSION,
+            true
+        );
+
+        wp_enqueue_style(
+            'divi-ai-wizard',
+            DIVI_AI_PLUGIN_URL . 'dist/admin/wizard.css',
+            ['wp-components'],
+            DIVI_AI_VERSION
+        );
+
+        wp_localize_script('divi-ai-wizard', 'diviAiWizard', [
+            'nonce' => wp_create_nonce('divi_ai_wizard'),
+            'ajaxUrl' => admin_url('admin-ajax.php'),
+            'restUrl' => rest_url('divi-ai/v1/'),
+            'userTokens' => $this->get_user_tokens(),
+            'siteInfo' => [
+                'name' => get_bloginfo('name'),
+                'logo' => get_custom_logo(),
+                'hasMenu' => has_nav_menu('primary-menu'),
+            ],
+        ]);
+    }
+
+    private function get_user_tokens(): array {
+        // Get user's brand settings from Customizer
+        return [
+            'colors' => [
+                'primary' => get_theme_mod('divi_ai_color_primary', '#3366ff'),
+                'secondary' => get_theme_mod('divi_ai_color_secondary', '#ff6633'),
+                'accent' => get_theme_mod('divi_ai_color_accent', '#00cc88'),
+            ],
+            'fonts' => [
+                'heading' => get_theme_mod('divi_ai_font_heading', 'Montserrat'),
+                'body' => get_theme_mod('divi_ai_font_body', 'Open Sans'),
+            ],
+        ];
+    }
+}
+```
+
+### Loading States & Progress
+
+```jsx
+// Real-time progress during generation
+const GenerationProgress = ({ sessionId }) => {
+    const [progress, setProgress] = useState(0);
+    const [status, setStatus] = useState('Initializing...');
+
+    useEffect(() => {
+        const pollProgress = async () => {
+            const data = await api.request('divi_ai_wizard_status', {
+                session_id: sessionId
+            });
+
+            setProgress(data.progress_percent);
+            setStatus(data.current_step);
+
+            if (data.status !== 'completed') {
+                setTimeout(pollProgress, 1000);
+            }
+        };
+
+        pollProgress();
+    }, [sessionId]);
+
+    return (
+        <div className="generation-progress">
+            <div className="progress-bar">
+                <div className="progress-fill" style={{ width: `${progress}%` }} />
+            </div>
+            <p className="progress-status">{status}</p>
+            <p className="progress-percent">{progress}%</p>
+        </div>
+    );
+};
 ```
 
 ---
