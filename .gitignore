@@ -1,0 +1,81 @@
+# Dependencies
+/node_modules/
+/vendor/
+
+# Build output
+/dist/
+/build/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE and editors
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# WordPress
+wp-config.php
+/wp-content/uploads/
+/wp-content/upgrade/
+/wp-content/cache/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+debug.log
+
+# Testing
+/coverage/
+.phpunit.result.cache
+.jest/
+
+# Package files
+*.zip
+*.tar.gz
+*.rar
+
+# Composer
+composer.lock
+
+# npm
+package-lock.json
+yarn.lock
+
+# Local development
+/.wp-env/
+/docker-compose.override.yml
+*.sql
+*.sql.gz
+
+# PHPStorm
+*.iml
+
+# Temporary files
+/tmp/
+/temp/
+*.tmp
+*.bak
+
+# Secrets and credentials
+*.pem
+*.key
+credentials.json
+secrets.json
