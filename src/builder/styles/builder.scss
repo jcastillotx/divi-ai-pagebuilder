@@ -4,6 +4,8 @@
  * @package DiviAI
  */
 
+@use "sass:color";
+
 // Variables
 $primary-color: #3366ff;
 $secondary-color: #6b7280;
@@ -18,7 +20,7 @@ $text-secondary: #6b7280;
     align-items: center;
     gap: 6px;
     padding: 8px 16px;
-    background: linear-gradient(135deg, $primary-color 0%, darken($primary-color, 10%) 100%);
+    background: linear-gradient(135deg, $primary-color 0%, color.adjust($primary-color, $lightness: -10%) 100%);
     border: none;
     border-radius: 6px;
     color: #fff;
