@@ -147,7 +147,7 @@ WP_DEBUG=true
 
 ## Useful Links
 
-- [Divi Developer Documentation](https://www.elegantthemes.com/documentation/developers/)
+- [Divi Developer Documentation](https://www.elegantthemes.com/developers/)
 - [WordPress Plugin Handbook](https://developer.wordpress.org/plugins/)
 - [OpenAI API Documentation](https://platform.openai.com/docs/)
 - [Anthropic API Documentation](https://docs.anthropic.com/)

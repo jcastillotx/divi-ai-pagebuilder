@@ -420,7 +420,7 @@ POST /templates            - Save custom template
 
 ## References
 
-- [Divi Module Development](https://www.elegantthemes.com/documentation/developers/divi-module/)
+- [Divi Developer Portal](https://www.elegantthemes.com/developers/)
 - [WordPress REST API Handbook](https://developer.wordpress.org/rest-api/)
 - [OpenAI Best Practices](https://platform.openai.com/docs/guides/safety-best-practices)
 - [WordPress Security Best Practices](https://developer.wordpress.org/plugins/security/)

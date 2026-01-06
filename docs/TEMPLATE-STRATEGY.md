@@ -1020,7 +1020,8 @@ class TemplateImportCommand extends WP_CLI_Command {
 
 ## References
 
-- [Divi JSON Structure](https://www.elegantthemes.com/documentation/divi/divi-library/)
+- [Divi Developer Portal](https://www.elegantthemes.com/developers/)
+- [Divi JSON Structure & Library](https://www.elegantthemes.com/developers/)
 - [WordPress Customizer API](https://developer.wordpress.org/themes/customize-api/)
 - [Design Tokens W3C](https://www.w3.org/community/design-tokens/)
 - [Color Theory for UI](https://www.smashingmagazine.com/2021/03/complete-guide-accessible-color-contrast/)
