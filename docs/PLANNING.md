@@ -139,22 +139,64 @@ Create a powerful WordPress plugin that brings AI-assisted design and content cr
 └─────────────────────────────────────────────────────────────┘
 ```
 
-### Phase 2: Layout Generation
+### Phase 2: AI Creation Wizard
 
-**Objective**: Enable AI-powered layout creation
+**Objective**: Enable AI-powered page and section creation through guided wizard
 
-- [ ] Layout prompt parser
-- [ ] Section/row/module structure generation
-- [ ] **Integration with Template Library** (AI selects best template)
-- [ ] Preview before insert functionality
-- [ ] Undo/redo support for AI changes
-- [ ] Multiple layout suggestions
+> 📖 See [AI-WIZARD-FLOW.md](./AI-WIZARD-FLOW.md) for complete UX specification
+
+- [ ] Wizard UI component architecture
+- [ ] Page vs Section creation flow
+- [ ] Section creation wizard
+  - [ ] Section type selection
+  - [ ] Background options (image/design/solid)
+  - [ ] Content description input
+- [ ] Page creation wizard
+  - [ ] Page type selection
+  - [ ] Layout preference
+  - [ ] Content overview
+  - [ ] Media requirements
+- [ ] Media integration
+  - [ ] Unsplash API integration (free stock photos)
+  - [ ] Envato Elements integration (premium stock)
+  - [ ] DALL-E image generation
+  - [ ] Design background generator (gradients, patterns)
+- [ ] AI content generation
+  - [ ] Template selection algorithm
+  - [ ] Copy generation (headlines, body, CTAs)
+  - [ ] SEO-optimized text
+- [ ] Preview and insert functionality
 
 **Deliverables**:
-- "Generate Layout" feature in Divi Builder
-- Natural language layout descriptions
-- Layout preview modal
-- AI-assisted template selection
+- Full-page creation wizard
+- Section creation wizard
+- Multi-source media integration
+- Live preview with brand styling
+- One-click insert to Divi
+
+**Key Flow**:
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    AI CREATION WIZARD                        │
+├─────────────────────────────────────────────────────────────┤
+│                                                              │
+│  Entry → Page or Section?                                    │
+│            │                                                 │
+│     ┌──────┴──────┐                                         │
+│     ▼             ▼                                         │
+│   PAGE         SECTION                                      │
+│     │             │                                         │
+│  • Type        • Type                                       │
+│  • Layout      • Background (AI image/design/solid)         │
+│  • Content     • Content                                    │
+│  • Media       │                                            │
+│     │             │                                         │
+│     └──────┬──────┘                                         │
+│            ▼                                                │
+│  Template Selection → Content Generation → Preview → Insert │
+│                                                              │
+└─────────────────────────────────────────────────────────────┘
+```
 
 ### Phase 3: Content Enhancement
 

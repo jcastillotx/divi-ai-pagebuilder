@@ -253,6 +253,7 @@ DIVI_AI_MIN_DIVI_VERSION = '4.14'
 |----------|-------------|
 | [PLANNING.md](docs/PLANNING.md) | Architecture and feature roadmap |
 | [TEMPLATE-STRATEGY.md](docs/TEMPLATE-STRATEGY.md) | Template library technical specification |
+| [AI-WIZARD-FLOW.md](docs/AI-WIZARD-FLOW.md) | AI creation wizard UX and implementation |
 | [SETUP.md](docs/SETUP.md) | Development environment setup |
 | [CLAUDE.md](CLAUDE.md) | AI assistant coding guidelines |
 
