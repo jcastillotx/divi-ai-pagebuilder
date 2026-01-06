@@ -9,12 +9,13 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const defaultConfig = require('@wordpress/scripts/config/webpack.config');
 
-const isProduction = process.env.NODE_ENV === 'production';
+module.exports = (env, argv) => {
+    const isProduction = argv.mode === 'production';
 
-module.exports = {
-    ...defaultConfig,
+    return {
+        ...defaultConfig,
 
-    entry: {
+        entry: {
         // Admin scripts
         'admin': './src/admin/index.js',
 
@@ -136,4 +137,5 @@ module.exports = {
         maxEntrypointSize: 512000,
         maxAssetSize: 512000,
     },
+    };
 };
