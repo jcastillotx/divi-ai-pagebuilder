@@ -253,10 +253,13 @@ DIVI_AI_MIN_DIVI_VERSION = '4.14'
 
 | Document | Description |
 |----------|-------------|
+| [INSTALL.md](INSTALL.md) | Installation guide for WordPress |
 | [CHANGELOG.md](CHANGELOG.md) | Version history and release notes |
+| [WIKI.md](docs/WIKI.md) | User guide and how-to documentation |
 | [PLANNING.md](docs/PLANNING.md) | Architecture and feature roadmap |
 | [TEMPLATE-STRATEGY.md](docs/TEMPLATE-STRATEGY.md) | Template library technical specification |
 | [AI-WIZARD-FLOW.md](docs/AI-WIZARD-FLOW.md) | AI creation wizard UX and implementation |
+| [AI-PERSONA.md](docs/AI-PERSONA.md) | AI persona and system prompts |
 | [SETTINGS-PAGE.md](docs/SETTINGS-PAGE.md) | Admin settings page specification |
 | [SETUP.md](docs/SETUP.md) | Development environment setup |
 | [CLAUDE.md](CLAUDE.md) | AI assistant coding guidelines |
