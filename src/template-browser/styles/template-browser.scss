@@ -1,0 +1,232 @@
+/**
+ * Template Browser Styles
+ *
+ * @package DiviAI
+ */
+
+// Variables
+$primary-color: #3366ff;
+$border-color: #e5e7eb;
+$bg-light: #f9fafb;
+$text-primary: #1f2937;
+$text-secondary: #6b7280;
+
+// Container
+.divi-ai-template-browser {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    max-height: 800px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 24px;
+        border-bottom: 1px solid $border-color;
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0;
+        }
+    }
+
+    &__close {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        color: $text-secondary;
+
+        &:hover {
+            color: $text-primary;
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex: 1;
+        overflow: hidden;
+    }
+
+    &__sidebar {
+        width: 240px;
+        flex-shrink: 0;
+        padding: 20px;
+        border-right: 1px solid $border-color;
+        overflow-y: auto;
+
+        h3 {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: $text-secondary;
+            margin: 0 0 12px;
+        }
+    }
+
+    &__categories {
+        list-style: none;
+        margin: 0 0 24px;
+        padding: 0;
+
+        li {
+            margin-bottom: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 8px 12px;
+            background: none;
+            border: none;
+            border-radius: 6px;
+            text-align: left;
+            cursor: pointer;
+            color: $text-primary;
+            transition: all 0.2s;
+
+            &:hover {
+                background: $bg-light;
+            }
+
+            &.is-active {
+                background: rgba($primary-color, 0.1);
+                color: $primary-color;
+                font-weight: 500;
+            }
+        }
+    }
+
+    &__search {
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid $border-color;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+    }
+
+    &__main {
+        flex: 1;
+        padding: 20px;
+        overflow-y: auto;
+    }
+
+    &__loading,
+    &__empty {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 200px;
+        color: $text-secondary;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    &__card {
+        background: #fff;
+        border: 2px solid $border-color;
+        border-radius: 8px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 0.2s;
+        text-align: left;
+
+        &:hover {
+            border-color: $primary-color;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        &.is-selected {
+            border-color: $primary-color;
+            box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
+        }
+    }
+
+    &__preview {
+        aspect-ratio: 16 / 10;
+        background: $bg-light;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__placeholder {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, $bg-light 0%, darken($bg-light, 5%) 100%);
+    }
+
+    &__info {
+        padding: 12px 16px;
+
+        h4 {
+            font-size: 14px;
+            font-weight: 500;
+            margin: 0 0 4px;
+            color: $text-primary;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        span {
+            font-size: 12px;
+            color: $text-secondary;
+        }
+    }
+
+    &__pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        margin-top: 24px;
+        padding-top: 24px;
+        border-top: 1px solid $border-color;
+
+        span {
+            color: $text-secondary;
+            font-size: 14px;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 24px;
+        border-top: 1px solid $border-color;
+        background: $bg-light;
+    }
+
+    &__selected {
+        font-size: 14px;
+        color: $text-primary;
+
+        strong {
+            color: $text-secondary;
+            font-weight: 500;
+        }
+    }
+}

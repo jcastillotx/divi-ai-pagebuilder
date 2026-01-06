@@ -1,0 +1,88 @@
+/**
+ * Customizer Styles
+ *
+ * @package DiviAI
+ */
+
+// CSS Custom Properties for Design Tokens
+:root {
+    // Default values - these are overwritten by Customizer
+    --divi-ai-primary: #3366ff;
+    --divi-ai-secondary: #ff6633;
+    --divi-ai-accent: #00cc88;
+    --divi-ai-text-primary: #333333;
+    --divi-ai-text-secondary: #666666;
+    --divi-ai-text-light: #ffffff;
+    --divi-ai-bg-primary: #ffffff;
+    --divi-ai-bg-secondary: #f8f9fa;
+    --divi-ai-bg-dark: #1a1a2e;
+    --divi-ai-font-heading: 'Montserrat', sans-serif;
+    --divi-ai-font-body: 'Open Sans', sans-serif;
+    --divi-ai-font-accent: 'Playfair Display', serif;
+}
+
+// Customizer Panel Enhancements
+#customize-control-divi_ai_color_primary,
+#customize-control-divi_ai_color_secondary,
+#customize-control-divi_ai_color_accent {
+    .wp-color-result {
+        border-radius: 6px;
+    }
+}
+
+// Color Picker Grid Layout
+.customize-control-color {
+    margin-bottom: 16px;
+}
+
+// Font Selector Styling
+[id^="customize-control-divi_ai_font"] {
+    select {
+        width: 100%;
+        font-family: inherit;
+    }
+}
+
+// Preset Cards (if using custom preset UI)
+.divi-ai-preset-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 12px 0;
+}
+
+.divi-ai-preset-card {
+    padding: 12px;
+    background: #fff;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+        border-color: #3366ff;
+    }
+
+    &.is-active {
+        border-color: #3366ff;
+        background: rgba(51, 102, 255, 0.05);
+    }
+
+    &__colors {
+        display: flex;
+        gap: 4px;
+        margin-bottom: 8px;
+    }
+
+    &__swatch {
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    &__name {
+        font-size: 12px;
+        font-weight: 500;
+    }
+}
