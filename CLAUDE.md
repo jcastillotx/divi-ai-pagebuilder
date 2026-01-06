@@ -4,6 +4,12 @@
 
 **Divi AI Page Builder** is a WordPress plugin that integrates AI capabilities with the Divi theme/page builder. The goal is to enable users to generate, modify, and optimize page layouts, content, and designs using natural language prompts.
 
+- **Version:** 1.0.0
+- **Author:** Kre8ivTech, LLC
+- **Website:** https://www.kre8ivtech.com
+
+> **IMPORTANT:** Always refer to `README.md` for the latest commands and version information. Update version numbers in all files when making changes.
+
 ## Tech Stack
 
 - **Backend**: PHP 8.0+ (WordPress Plugin)
