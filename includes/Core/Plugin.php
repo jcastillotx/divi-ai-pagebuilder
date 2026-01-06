@@ -161,6 +161,7 @@ final class Plugin {
     private function register_ajax_handlers(): void {
         $ajax_actions = [
             'divi_ai_test_provider'    => [ $this->get( 'settings' ), 'ajax_test_provider' ],
+            'divi_ai_save_api_key'     => [ $this->get( 'settings' ), 'ajax_save_api_key' ],
             'divi_ai_clear_cache'      => [ $this->get( 'settings' ), 'ajax_clear_cache' ],
             'divi_ai_export_settings'  => [ $this->get( 'settings' ), 'ajax_export_settings' ],
             'divi_ai_import_settings'  => [ $this->get( 'settings' ), 'ajax_import_settings' ],
