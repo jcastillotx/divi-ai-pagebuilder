@@ -92,13 +92,60 @@ Create a powerful WordPress plugin that brings AI-assisted design and content cr
 - Settings page for API configuration
 - Basic "Generate Content" button in Divi
 
+### Phase 1.5: Template Library Foundation ⭐ NEW
+
+**Objective**: Integrate 2000+ Divi templates with dynamic customization
+
+> 📖 See [TEMPLATE-STRATEGY.md](./TEMPLATE-STRATEGY.md) for complete technical specification
+
+- [ ] Create template directory structure and organization system
+- [ ] Build template import/analysis CLI tool
+- [ ] Generate template metadata index (categories, colors, fonts, tags)
+- [ ] Design Token System implementation
+  - [ ] Define token schema (colors, typography, spacing)
+  - [ ] WordPress Customizer "Global Styles" panel
+  - [ ] Color palette presets (10+ themes)
+  - [ ] Google Fonts integration
+- [ ] Template Transformation Engine
+  - [ ] Divi JSON parser
+  - [ ] Color role detection (semantic clustering)
+  - [ ] Font role mapping (heading vs body)
+  - [ ] Transformation pipeline with caching
+- [ ] Template Browser UI
+  - [ ] Category navigation sidebar
+  - [ ] Search and filter capabilities
+  - [ ] Live preview with user's colors/fonts
+  - [ ] "Insert with Customization" workflow
+
+**Deliverables**:
+- Organized template library (2000+ templates)
+- WordPress Customizer panel for brand colors/fonts
+- Template browser modal in Divi Builder
+- One-click insertion with automatic brand styling
+
+**Key Components**:
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│              TEMPLATE CUSTOMIZATION FLOW                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                              │
+│  Template Library    →   User's Style Profile   →   Output  │
+│  (2000+ JSON files)      (Customizer tokens)       (Divi)   │
+│                                                              │
+│  Colors: #3366ff    →   Primary: #your-brand   →   #brand   │
+│  Fonts: Montserrat  →   Heading: Poppins       →   Poppins  │
+│                                                              │
+└─────────────────────────────────────────────────────────────┘
+```
+
 ### Phase 2: Layout Generation
 
 **Objective**: Enable AI-powered layout creation
 
 - [ ] Layout prompt parser
 - [ ] Section/row/module structure generation
-- [ ] Template library integration
+- [ ] **Integration with Template Library** (AI selects best template)
 - [ ] Preview before insert functionality
 - [ ] Undo/redo support for AI changes
 - [ ] Multiple layout suggestions
@@ -107,6 +154,7 @@ Create a powerful WordPress plugin that brings AI-assisted design and content cr
 - "Generate Layout" feature in Divi Builder
 - Natural language layout descriptions
 - Layout preview modal
+- AI-assisted template selection
 
 ### Phase 3: Content Enhancement
 
@@ -213,8 +261,8 @@ CREATE TABLE {prefix}divi_ai_usage (
     UNIQUE KEY unique_user_period (user_id, period_start)
 );
 
--- Prompt Templates
-CREATE TABLE {prefix}divi_ai_templates (
+-- Prompt Templates (AI prompts)
+CREATE TABLE {prefix}divi_ai_prompt_templates (
     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     category VARCHAR(100),
@@ -222,6 +270,66 @@ CREATE TABLE {prefix}divi_ai_templates (
     is_system TINYINT(1) DEFAULT 0,
     created_by BIGINT UNSIGNED,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Divi Template Library (2000+ layout templates)
+CREATE TABLE {prefix}divi_ai_template_library (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    template_id VARCHAR(100) NOT NULL UNIQUE,
+    name VARCHAR(255) NOT NULL,
+    category VARCHAR(100) NOT NULL,
+    subcategory VARCHAR(100),
+    tags JSON,
+    industry JSON,
+    color_palette JSON,
+    fonts_used JSON,
+    module_count INT UNSIGNED,
+    preview_url VARCHAR(500),
+    json_path VARCHAR(500),
+    json_content LONGTEXT,
+    popularity_score DECIMAL(3,2) DEFAULT 0.00,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX idx_category (category),
+    INDEX idx_subcategory (subcategory),
+    INDEX idx_popularity (popularity_score),
+    FULLTEXT idx_search (name, category, subcategory)
+);
+
+-- User Style Profiles (Design Tokens per site)
+CREATE TABLE {prefix}divi_ai_style_profiles (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    profile_name VARCHAR(100) NOT NULL,
+    is_active TINYINT(1) DEFAULT 0,
+    color_primary VARCHAR(7),
+    color_secondary VARCHAR(7),
+    color_accent VARCHAR(7),
+    color_text_primary VARCHAR(7),
+    color_text_secondary VARCHAR(7),
+    color_text_light VARCHAR(7),
+    color_bg_primary VARCHAR(7),
+    color_bg_secondary VARCHAR(7),
+    color_bg_dark VARCHAR(7),
+    font_heading VARCHAR(100),
+    font_body VARCHAR(100),
+    font_accent VARCHAR(100),
+    custom_tokens JSON,
+    created_by BIGINT UNSIGNED,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX idx_active (is_active)
+);
+
+-- Template Transformation Cache
+CREATE TABLE {prefix}divi_ai_transform_cache (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    template_id VARCHAR(100) NOT NULL,
+    profile_hash VARCHAR(32) NOT NULL,
+    transformed_json LONGTEXT NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    expires_at DATETIME,
+    UNIQUE KEY unique_transform (template_id, profile_hash),
+    INDEX idx_expires (expires_at)
 );
 ```
 
@@ -291,11 +399,22 @@ POST /templates            - Save custom template
 
 ## Open Questions
 
+### General
 1. Should we support Divi Builder plugin standalone (without theme)?
 2. What pricing model? (Freemium, subscription, one-time)
 3. Should AI-generated layouts be shareable/exportable?
 4. Integration with other page builders in the future?
 5. White-label/agency version requirements?
+
+### Template Library Specific
+6. **Template licensing**: How to handle attribution for divi.express templates?
+7. **Partial transformation**: Should users be able to customize only colors OR only fonts?
+8. **Gradient handling**: Templates with gradients have multiple color stops - transform all or primary only?
+9. **Custom palette saving**: Should users be able to save their own style presets?
+10. **Image color matching**: Templates with colored icons/images - replace or keep original?
+11. **Divi preset integration**: Sync with Divi's built-in Global Presets system?
+12. **Template updates**: How to update templates while preserving user customizations?
+13. **Offline support**: Store templates locally or fetch from CDN?
 
 ---
 
