@@ -5,6 +5,7 @@
 # Build output
 /dist/
 /build/
+/assets/dist/
 
 # Environment files
 .env
