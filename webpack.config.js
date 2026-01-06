@@ -58,7 +58,15 @@ module.exports = {
                     isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
                     'css-loader',
                     'postcss-loader',
-                    'sass-loader',
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            api: 'modern',
+                            sassOptions: {
+                                silenceDeprecations: ['import'],
+                            },
+                        },
+                    },
                 ],
             },
             {
