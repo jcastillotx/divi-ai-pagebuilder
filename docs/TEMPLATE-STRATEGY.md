@@ -4,6 +4,8 @@
 
 This document outlines the strategy for integrating 2000+ Divi JSON templates from divi.express into the Divi AI Page Builder plugin, with dynamic customization through WordPress Customizer.
 
+> **Licensing**: Full commercial usage rights for divi.express templates have been secured.
+
 **Key Goals:**
 1. Organize and categorize 2000+ templates for easy discovery
 2. Enable dynamic font and color customization via Customizer

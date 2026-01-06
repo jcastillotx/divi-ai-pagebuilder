@@ -407,14 +407,15 @@ POST /templates            - Save custom template
 5. White-label/agency version requirements?
 
 ### Template Library Specific
-6. **Template licensing**: How to handle attribution for divi.express templates?
-7. **Partial transformation**: Should users be able to customize only colors OR only fonts?
-8. **Gradient handling**: Templates with gradients have multiple color stops - transform all or primary only?
-9. **Custom palette saving**: Should users be able to save their own style presets?
-10. **Image color matching**: Templates with colored icons/images - replace or keep original?
-11. **Divi preset integration**: Sync with Divi's built-in Global Presets system?
-12. **Template updates**: How to update templates while preserving user customizations?
-13. **Offline support**: Store templates locally or fetch from CDN?
+6. **Partial transformation**: Should users be able to customize only colors OR only fonts?
+7. **Gradient handling**: Templates with gradients have multiple color stops - transform all or primary only?
+8. **Custom palette saving**: Should users be able to save their own style presets?
+9. **Image color matching**: Templates with colored icons/images - replace or keep original?
+10. **Divi preset integration**: Sync with Divi's built-in Global Presets system?
+11. **Template updates**: How to update templates while preserving user customizations?
+12. **Offline support**: Store templates locally or fetch from CDN?
+
+> **Note**: Template licensing from divi.express is secured - full commercial usage rights obtained.
 
 ---
 
