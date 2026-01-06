@@ -154,6 +154,43 @@ function divi_ai_divi_required_notice() {
 }
 
 /**
+ * Load the Composer autoloader.
+ *
+ * @return bool True if autoloader loaded, false otherwise.
+ */
+function divi_ai_load_autoloader(): bool {
+    $autoloader = DIVI_AI_PLUGIN_DIR . 'vendor/autoload.php';
+
+    if ( file_exists( $autoloader ) ) {
+        require_once $autoloader;
+        return true;
+    }
+
+    // Fallback: manual loading for development.
+    require_once DIVI_AI_PLUGIN_DIR . 'includes/functions.php';
+
+    // Register a simple PSR-4 autoloader.
+    spl_autoload_register( function ( $class ) {
+        $prefix = 'DiviAI\\';
+        $base_dir = DIVI_AI_PLUGIN_DIR . 'includes/';
+
+        $len = strlen( $prefix );
+        if ( strncmp( $prefix, $class, $len ) !== 0 ) {
+            return;
+        }
+
+        $relative_class = substr( $class, $len );
+        $file = $base_dir . str_replace( '\\', '/', $relative_class ) . '.php';
+
+        if ( file_exists( $file ) ) {
+            require_once $file;
+        }
+    } );
+
+    return true;
+}
+
+/**
  * Initialize the plugin.
  *
  * @return void
@@ -170,14 +207,21 @@ function divi_ai_init() {
         return;
     }
 
+    // Load autoloader.
+    if ( ! divi_ai_load_autoloader() ) {
+        add_action( 'admin_notices', function() {
+            echo '<div class="notice notice-error"><p>';
+            esc_html_e( 'Divi AI Page Builder: Failed to load dependencies. Please run composer install.', 'divi-ai-pagebuilder' );
+            echo '</p></div>';
+        } );
+        return;
+    }
+
     // Load text domain for translations.
     load_plugin_textdomain( 'divi-ai-pagebuilder', false, dirname( DIVI_AI_PLUGIN_BASENAME ) . '/languages' );
 
-    // Include core files.
-    // require_once DIVI_AI_PLUGIN_DIR . 'includes/class-plugin.php';
-
     // Initialize the plugin.
-    // DiviAI\Plugin::instance();
+    DiviAI\Core\Plugin::instance();
 
     /**
      * Fires after the Divi AI Page Builder plugin is fully loaded.

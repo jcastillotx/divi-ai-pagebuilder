@@ -1,0 +1,241 @@
+/**
+ * Admin Settings Styles
+ *
+ * @package DiviAI
+ */
+
+// Variables
+$primary-color: #3366ff;
+$secondary-color: #6b7280;
+$success-color: #10b981;
+$error-color: #ef4444;
+$warning-color: #f59e0b;
+$border-color: #e5e7eb;
+$bg-light: #f9fafb;
+$text-primary: #1f2937;
+$text-secondary: #6b7280;
+
+// Settings Container
+.divi-ai-settings {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+
+    &__header {
+        margin-bottom: 24px;
+
+        h1 {
+            font-size: 28px;
+            font-weight: 600;
+            color: $text-primary;
+            margin: 0 0 8px;
+        }
+    }
+
+    &__tabs {
+        display: flex;
+        gap: 4px;
+        margin-bottom: 24px;
+        border-bottom: 1px solid $border-color;
+        padding-bottom: 0;
+    }
+
+    &__tab {
+        padding: 12px 20px;
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid transparent;
+        color: $text-secondary;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 500;
+        transition: all 0.2s;
+        margin-bottom: -1px;
+
+        &:hover {
+            color: $primary-color;
+        }
+
+        &.is-active {
+            color: $primary-color;
+            border-bottom-color: $primary-color;
+        }
+    }
+
+    &__content {
+        margin-bottom: 24px;
+    }
+
+    &__footer {
+        padding: 20px 0;
+        border-top: 1px solid $border-color;
+    }
+}
+
+// Tab Content
+.divi-ai-tab-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+// Card Component
+.divi-ai-card {
+    background: #fff;
+    border: 1px solid $border-color;
+    border-radius: 8px;
+    overflow: hidden;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 20px;
+        background: $bg-light;
+        border-bottom: 1px solid $border-color;
+    }
+
+    &__title {
+        font-size: 16px;
+        font-weight: 600;
+        color: $text-primary;
+        margin: 0;
+    }
+
+    &__actions {
+        display: flex;
+        gap: 8px;
+    }
+
+    &__content {
+        padding: 20px;
+
+        > * + * {
+            margin-top: 16px;
+        }
+    }
+
+    &--danger {
+        border-color: rgba($error-color, 0.3);
+
+        .divi-ai-card__header {
+            background: rgba($error-color, 0.05);
+        }
+    }
+}
+
+// Form Fields
+.divi-ai-field {
+    margin-bottom: 16px;
+
+    label {
+        display: block;
+        font-weight: 500;
+        margin-bottom: 6px;
+        color: $text-primary;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"] {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .description {
+        margin-top: 6px;
+        color: $text-secondary;
+        font-size: 13px;
+    }
+
+    &__input-group {
+        display: flex;
+        gap: 8px;
+        align-items: flex-start;
+
+        input {
+            flex: 1;
+        }
+    }
+}
+
+.divi-ai-field-row {
+    display: flex;
+    gap: 24px;
+
+    > * {
+        flex: 1;
+    }
+}
+
+// Button Group
+.divi-ai-button-group {
+    display: flex;
+    gap: 12px;
+}
+
+// Warning Text
+.divi-ai-warning {
+    color: $error-color;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+// Progress Bar
+.divi-ai-progress {
+    &__bar {
+        height: 12px;
+        background: $bg-light;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+
+    &__fill {
+        height: 100%;
+        background: $primary-color;
+        border-radius: 6px;
+        transition: width 0.3s ease;
+
+        &.is-warning {
+            background: $warning-color;
+        }
+
+        &.is-danger {
+            background: $error-color;
+        }
+    }
+
+    &__label {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 6px;
+        font-size: 13px;
+        color: $text-secondary;
+    }
+}
+
+// Usage Stats
+.divi-ai-usage-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.divi-ai-usage-stat {
+    h4 {
+        font-size: 14px;
+        font-weight: 500;
+        margin: 0 0 8px;
+        color: $text-primary;
+    }
+}
+
+// WordPress Components Overrides
+.components-toggle-control {
+    margin-bottom: 16px;
+}
+
+.components-select-control {
+    max-width: 400px;
+}
