@@ -359,6 +359,44 @@ function divi_ai_create_tables() {
         INDEX idx_expires (expires_at)
     ) $charset_collate;";
 
+    // Wizard Sessions table.
+    $sql[] = "CREATE TABLE IF NOT EXISTS {$wpdb->prefix}divi_ai_wizard_sessions (
+        id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        session_id VARCHAR(64) NOT NULL UNIQUE,
+        user_id BIGINT UNSIGNED NOT NULL,
+        wizard_type ENUM('page', 'section', 'site_setup') NOT NULL,
+        current_step VARCHAR(50) NOT NULL,
+        step_data JSON,
+        accumulated_data JSON,
+        status ENUM('active', 'completed', 'abandoned') DEFAULT 'active',
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+        expires_at DATETIME,
+        INDEX idx_user_id (user_id),
+        INDEX idx_status (status),
+        INDEX idx_expires (expires_at)
+    ) $charset_collate;";
+
+    // Media Cache table.
+    $sql[] = "CREATE TABLE IF NOT EXISTS {$wpdb->prefix}divi_ai_media_cache (
+        id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        source VARCHAR(50) NOT NULL,
+        source_id VARCHAR(255) NOT NULL,
+        query_hash VARCHAR(32),
+        media_type ENUM('image', 'video', 'pattern') NOT NULL,
+        url VARCHAR(500) NOT NULL,
+        thumbnail_url VARCHAR(500),
+        metadata JSON,
+        attribution TEXT,
+        downloaded_path VARCHAR(500),
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        expires_at DATETIME,
+        UNIQUE KEY unique_source (source, source_id),
+        INDEX idx_query (query_hash),
+        INDEX idx_type (media_type),
+        INDEX idx_expires (expires_at)
+    ) $charset_collate;";
+
     require_once ABSPATH . 'wp-admin/includes/upgrade.php';
 
     foreach ( $sql as $query ) {

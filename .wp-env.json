@@ -1,0 +1,41 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/wp-env.json",
+    "core": "WordPress/WordPress#6.4",
+    "phpVersion": "8.0",
+    "plugins": [
+        "."
+    ],
+    "themes": [],
+    "config": {
+        "WP_DEBUG": true,
+        "WP_DEBUG_LOG": true,
+        "WP_DEBUG_DISPLAY": true,
+        "SCRIPT_DEBUG": true,
+        "DIVI_AI_DEV_MODE": true,
+        "DIVI_AI_LOG_LEVEL": "debug"
+    },
+    "mappings": {
+        "wp-content/uploads": "./uploads",
+        "wp-content/debug.log": "./debug.log"
+    },
+    "env": {
+        "development": {
+            "config": {
+                "WP_DEBUG": true,
+                "WP_DEBUG_LOG": true,
+                "WP_DEBUG_DISPLAY": true,
+                "SCRIPT_DEBUG": true
+            }
+        },
+        "tests": {
+            "phpVersion": "8.0",
+            "config": {
+                "WP_DEBUG": true,
+                "WP_DEBUG_LOG": true
+            }
+        }
+    },
+    "lifecycleScripts": {
+        "afterStart": "npm run build"
+    }
+}

@@ -236,6 +236,8 @@ divi-ai-pagebuilder/
 - `{prefix}divi_ai_template_library` - Divi template registry
 - `{prefix}divi_ai_style_profiles` - User style profiles
 - `{prefix}divi_ai_transform_cache` - Transformation cache
+- `{prefix}divi_ai_wizard_sessions` - Wizard session state
+- `{prefix}divi_ai_media_cache` - Media asset cache
 
 #### Constants Defined
 ```php
@@ -251,9 +253,11 @@ DIVI_AI_MIN_DIVI_VERSION = '4.14'
 
 | Document | Description |
 |----------|-------------|
+| [CHANGELOG.md](CHANGELOG.md) | Version history and release notes |
 | [PLANNING.md](docs/PLANNING.md) | Architecture and feature roadmap |
 | [TEMPLATE-STRATEGY.md](docs/TEMPLATE-STRATEGY.md) | Template library technical specification |
 | [AI-WIZARD-FLOW.md](docs/AI-WIZARD-FLOW.md) | AI creation wizard UX and implementation |
+| [SETTINGS-PAGE.md](docs/SETTINGS-PAGE.md) | Admin settings page specification |
 | [SETUP.md](docs/SETUP.md) | Development environment setup |
 | [CLAUDE.md](CLAUDE.md) | AI assistant coding guidelines |
 
@@ -304,9 +308,13 @@ DIVI_AI_LOG_LEVEL=debug
 
 When making changes, update version in:
 1. `divi-ai-pagebuilder.php` - Plugin header and `DIVI_AI_VERSION` constant
-2. `README.md` - Version badge and Version History section
-3. `readme.txt` - Stable tag and changelog
-4. `package.json` - Version field (if exists)
+2. `package.json` - Version field
+3. `composer.json` - Version field
+4. `README.md` - Version badge and Version History section
+5. `readme.txt` - Stable tag and changelog
+6. `CHANGELOG.md` - Add new version section with changes
+
+> **CLAUDE INSTRUCTION:** When making significant changes or updating to a new version, always update the CHANGELOG.md file following the [Keep a Changelog](https://keepachangelog.com/) format. Group changes under: Added, Changed, Deprecated, Removed, Fixed, Security.
 
 ---
 

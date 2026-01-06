@@ -165,3 +165,50 @@ WP_DEBUG=true
 - AI responses need sanitization before being used in WordPress
 - Consider backward compatibility with older Divi versions
 - The plugin should work without AI keys (graceful degradation)
+
+## Changelog Maintenance
+
+**IMPORTANT:** When making significant changes or releasing new versions, you MUST update the `CHANGELOG.md` file.
+
+### When to Update Changelog
+- Adding new features or functionality
+- Fixing bugs
+- Making breaking changes
+- Updating dependencies significantly
+- Modifying API endpoints
+- Database schema changes
+- Security updates
+
+### Changelog Format
+Follow the [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format:
+
+```markdown
+## [Version] - YYYY-MM-DD
+
+### Added
+- New features
+
+### Changed
+- Changes to existing functionality
+
+### Deprecated
+- Features to be removed in future
+
+### Removed
+- Features removed in this release
+
+### Fixed
+- Bug fixes
+
+### Security
+- Security vulnerability fixes
+```
+
+### Version Bump Checklist
+When updating the version, update ALL of these files:
+1. `divi-ai-pagebuilder.php` - Plugin header `Version:` and `DIVI_AI_VERSION` constant
+2. `package.json` - `version` field
+3. `composer.json` - `version` field
+4. `README.md` - Version badge and Version History section
+5. `readme.txt` - `Stable tag:` and Changelog section
+6. `CHANGELOG.md` - Add new version section with all changes

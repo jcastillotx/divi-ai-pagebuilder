@@ -141,15 +141,22 @@ Create a powerful WordPress plugin that brings AI-assisted design and content cr
 
 ### Phase 2: AI Creation Wizard
 
-**Objective**: Enable AI-powered page and section creation through guided wizard
+**Objective**: Enable AI-powered page, section, and site setup through guided wizard
 
 > 📖 See [AI-WIZARD-FLOW.md](./AI-WIZARD-FLOW.md) for complete UX specification
 
 - [ ] Wizard UI component architecture
-- [ ] Page vs Section creation flow
+- [ ] Three-option entry point (Page/Section/Site Setup)
+- [ ] Site Setup wizard
+  - [ ] Header selection from divi.express templates
+  - [ ] Footer selection from divi.express templates
+  - [ ] 404 page selection from divi.express templates
+  - [ ] Logo upload and menu configuration
+  - [ ] Auto-menu creation from published pages
+  - [ ] Divi Theme Builder integration
 - [ ] Section creation wizard
   - [ ] Section type selection
-  - [ ] Background options (image/design/solid)
+  - [ ] Background options (AI image/design/solid)
   - [ ] Content description input
 - [ ] Page creation wizard
   - [ ] Page type selection
@@ -168,6 +175,7 @@ Create a powerful WordPress plugin that brings AI-assisted design and content cr
 - [ ] Preview and insert functionality
 
 **Deliverables**:
+- Site Setup wizard with global header/footer/404
 - Full-page creation wizard
 - Section creation wizard
 - Multi-source media integration
@@ -176,26 +184,32 @@ Create a powerful WordPress plugin that brings AI-assisted design and content cr
 
 **Key Flow**:
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                    AI CREATION WIZARD                        │
-├─────────────────────────────────────────────────────────────┤
-│                                                              │
-│  Entry → Page or Section?                                    │
-│            │                                                 │
-│     ┌──────┴──────┐                                         │
-│     ▼             ▼                                         │
-│   PAGE         SECTION                                      │
-│     │             │                                         │
-│  • Type        • Type                                       │
-│  • Layout      • Background (AI image/design/solid)         │
-│  • Content     • Content                                    │
-│  • Media       │                                            │
-│     │             │                                         │
-│     └──────┬──────┘                                         │
-│            ▼                                                │
-│  Template Selection → Content Generation → Preview → Insert │
-│                                                              │
-└─────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────┐
+│                       AI CREATION WIZARD                             │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                      │
+│  Entry → What would you like to create?                              │
+│                    │                                                 │
+│         ┌─────────┼─────────┐                                       │
+│         ▼         ▼         ▼                                       │
+│      PAGE     SECTION   SITE SETUP                                  │
+│         │         │         │                                       │
+│      • Type    • Type    • Header                                   │
+│      • Layout  • Bg      • Footer                                   │
+│      • Content • Content • 404 Page                                 │
+│      • Media      │      • Logo/Menu                                │
+│         │         │         │                                       │
+│         └────┬────┘         │                                       │
+│              ▼              ▼                                       │
+│    Template Selection    Theme Builder                              │
+│              ↓              Integration                             │
+│    Content Generation         │                                     │
+│              ↓                │                                     │
+│         Preview ←─────────────┘                                     │
+│              ↓                                                      │
+│          Insert                                                     │
+│                                                                      │
+└─────────────────────────────────────────────────────────────────────┘
 ```
 
 ### Phase 3: Content Enhancement
@@ -371,6 +385,44 @@ CREATE TABLE {prefix}divi_ai_transform_cache (
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     expires_at DATETIME,
     UNIQUE KEY unique_transform (template_id, profile_hash),
+    INDEX idx_expires (expires_at)
+);
+
+-- Wizard Sessions (AI Creation Wizard state)
+CREATE TABLE {prefix}divi_ai_wizard_sessions (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    session_id VARCHAR(64) NOT NULL UNIQUE,
+    user_id BIGINT UNSIGNED NOT NULL,
+    wizard_type ENUM('page', 'section', 'site_setup') NOT NULL,
+    current_step VARCHAR(50) NOT NULL,
+    step_data JSON,
+    accumulated_data JSON,
+    status ENUM('active', 'completed', 'abandoned') DEFAULT 'active',
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    expires_at DATETIME,
+    INDEX idx_user_id (user_id),
+    INDEX idx_status (status),
+    INDEX idx_expires (expires_at)
+);
+
+-- Media Cache (Unsplash, Envato, DALL-E)
+CREATE TABLE {prefix}divi_ai_media_cache (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    source VARCHAR(50) NOT NULL,
+    source_id VARCHAR(255) NOT NULL,
+    query_hash VARCHAR(32),
+    media_type ENUM('image', 'video', 'pattern') NOT NULL,
+    url VARCHAR(500) NOT NULL,
+    thumbnail_url VARCHAR(500),
+    metadata JSON,
+    attribution TEXT,
+    downloaded_path VARCHAR(500),
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    expires_at DATETIME,
+    UNIQUE KEY unique_source (source, source_id),
+    INDEX idx_query (query_hash),
+    INDEX idx_type (media_type),
     INDEX idx_expires (expires_at)
 );
 ```
